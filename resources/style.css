@@ -1,0 +1,53 @@
+/* some default styles to make the view more native like */
+
+html {
+  box-sizing: border-box;
+  background: transparent;
+
+  /* Prevent the page to be scrollable */
+  overflow: hidden;
+
+  /* Force the default cursor, even on text */
+  cursor: default;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  /* Prevent the content from being selectionable */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+.horz-knob {
+  grid-area: horz-scroll;
+}
+
+.vert-knob {
+  grid-area: vert-scroll;
+}
+
+touch-knob {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border: 6px dotted #d3d3d3;
+  background: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  will-change: transform;
+  margin: 0;
+  overflow: hidden;
+  contain: strict;
+}

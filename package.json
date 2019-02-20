@@ -1,0 +1,40 @@
+{
+  "name": "sketch-a-sketch",
+  "description": "Bringing the iconic knobs from the famous toy to Sketch.",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "Sketch a Sketch",
+    "manifest": "src/manifest.json",
+    "main": "sketch-a-sketch.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.11",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^1.0.0",
+    "html-loader": "^0.5.1"
+  },
+  "resources": [
+    "resources/**/*.js"
+  ],
+  "dependencies": {
+    "@webcomponents/custom-elements": "^1.2.1",
+    "sketch-module-web-view": "^2.1.6"
+  },
+  "author": "Mathieu Dutour <mathieu@dutour.me>",
+  "repository" : {
+    "type": "git",
+    "url": "git+https://github.com/mathieudutour/sketch-a-sketch.git"
+  }
+}

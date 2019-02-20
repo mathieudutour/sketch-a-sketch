@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello World</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <touch-knob value="10" class="horz-knob knob">H<br />⇔</touch-knob>
+
+  <!-- notice the "../" here. It's because webview.js will be compiled in a different folder -->
+  <script src="../webview.js"></script>
+  <script>
+    const throttle = (func, limit) => {
+      let inThrottle
+      return function() {
+        const args = arguments
+        const context = this
+        if (!inThrottle) {
+          func.apply(context, args)
+          inThrottle = true
+          setTimeout(() => inThrottle = false, limit)
+        }
+      }
+    }
+
+    const knob = document.querySelector('.knob')
+    let previousValue = 10
+
+    document.addEventListener('touch-knob-move', throttle(() => {
+      const value = knob.value - previousValue
+      const direction = value > 0 ? 'right' : 'left'
+      window.postMessage('moveCursor', {direction, value: Math.abs(value)})
+      previousValue = knob.value
+    }, 50), { capture: false, passive: true });
+  </script>
+</body>
+</html>

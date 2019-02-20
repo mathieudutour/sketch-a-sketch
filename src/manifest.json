@@ -1,0 +1,18 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Show/Hide Knobs",
+      "identifier": "my-command-identifier",
+      "script": "./my-command.js"
+    }
+  ],
+  "menu": {
+    "title": "Sketch a Sketch",
+    "items": [
+      "my-command-identifier"
+    ]
+  }
+}
