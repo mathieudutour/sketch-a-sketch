@@ -33,7 +33,7 @@
     "sketch-module-web-view": "^2.1.6"
   },
   "author": "Mathieu Dutour <mathieu@dutour.me>",
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/mathieudutour/sketch-a-sketch.git"
   }
